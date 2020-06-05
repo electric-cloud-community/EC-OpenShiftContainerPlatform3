@@ -7,7 +7,7 @@ pluginInfo:
   description: 'Integrate with Redhat Openshift Container Platform 3 with rest api'
   author: 'Shaohua Wen'
   supportUrl: 'none'
-  category: 'Utilities'
+  category: 'Container Management'
   shell: 'ec-perl'
 
 # REST-backed plugin configuration
