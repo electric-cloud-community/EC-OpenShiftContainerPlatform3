@@ -3,7 +3,7 @@ pluginInfo:
   # Feel free to change it
   # Call flowpdk showdoc pluginspec to see the list of available fields and their description
   pluginName: 'EC-OpenShiftContainerPlatform3'
-  version: '0.9.0'
+  version: '0.9.1'
   description: 'Integrate with Redhat Openshift Container Platform 3 with rest api'
   author: 'Shaohua Wen'
   supportUrl: 'none'
@@ -88,14 +88,6 @@ procedures:
     label: Body
     restParamInfo:
       in: body
-  -
-    name: pretty
-    documentation: If 'true', then the output is pretty printed.
-    type: checkbox
-    label: Pretty
-    initiallyChecked: true
-    checkedValue: true
-    uncheckedValue: false
     restParamInfo:
       in: query
   outputParameters:
@@ -138,14 +130,6 @@ procedures:
     label: Body
     restParamInfo:
       in: body
-  -
-    name: pretty
-    documentation: If 'true', then the output is pretty printed.
-    type: checkbox
-    label: Pretty
-    initiallyChecked: true
-    checkedValue: true
-    uncheckedValue: false
     restParamInfo:
       in: query
   outputParameters:
@@ -188,16 +172,6 @@ procedures:
     label: Body
     restParamInfo:
       in: body
-  -
-    name: pretty
-    documentation: If 'true', then the output is pretty printed.
-    type: checkbox
-    label: Pretty
-    initiallyChecked: true
-    checkedValue: true
-    uncheckedValue: false
-    restParamInfo:
-      in: query
   outputParameters:
   -
     name: restResult 

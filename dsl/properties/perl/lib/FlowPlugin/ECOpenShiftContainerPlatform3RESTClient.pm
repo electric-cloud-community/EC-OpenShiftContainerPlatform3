@@ -402,8 +402,6 @@ sub getARouteInANamespace {
 
 # body: in body
 
-# pretty: in query
-
 sub PatchADeploymentInANamespace {
     my ($self, %params) = @_;
 
@@ -416,8 +414,6 @@ sub PatchADeploymentInANamespace {
     logDebug "Rendered URI: $uri";
 
     my $query = {
-
-        'pretty' => $params{ 'pretty' },
 
     };
 
@@ -451,8 +447,6 @@ sub PatchADeploymentInANamespace {
 # namespace: in path
 
 # body: in body
-
-# pretty: in query
 
 sub PatchADeploymentConfigInANamespace {
     my ($self, %params) = @_;
@@ -467,8 +461,6 @@ sub PatchADeploymentConfigInANamespace {
 
     my $query = {
 
-        'pretty' => $params{ 'pretty' },
-
     };
 
     logDebug "Query", $query;
@@ -502,8 +494,6 @@ sub PatchADeploymentConfigInANamespace {
 
 # body: in body
 
-# pretty: in query
-
 sub PatchARouteInANamespace {
     my ($self, %params) = @_;
 
@@ -516,8 +506,6 @@ sub PatchARouteInANamespace {
     logDebug "Rendered URI: $uri";
 
     my $query = {
-
-        'pretty' => $params{ 'pretty' },
 
     };
 
@@ -607,6 +595,12 @@ By default the payload is encoded as JSON.
 
 sub encodePayload {
     my ($self, $payload) = @_;
+
+    if ($self->method eq 'PatchARouteInANamespace' or 'PatchADeploymentInANamespace' or 'PatchADeploymentConfigInANamespace') {
+        # JSON
+        my $body = $payload->{body};
+        return $body;
+    }
 
     return encode_json($payload);
 }

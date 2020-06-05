@@ -73,7 +73,7 @@ sub patchADeploymentInANamespace {
     my %restParams = (
         'name' => $params->{'name'},
         'namespace' => $params->{'namespace'},
-        'body' => decode_json($params->{'body'}),
+        'body' => $params->{'body'},
     );
     my $response = $ECOpenShiftContainerPlatform3RESTClient->getARouteInANamespace(%restParams);
     logInfo("Got response from the server: ", $response);
@@ -90,7 +90,6 @@ sub patchADeploymentInANamespace {
 # Parameter: name
 # Parameter: namespace
 # Parameter: body
-# Parameter: pretty
 
 sub patchADeploymentConfigInANamespace {
     my ($pluginObject) = @_;
@@ -103,8 +102,7 @@ sub patchADeploymentConfigInANamespace {
     my %restParams = (
         'name' => $params->{'name'},
         'namespace' => $params->{'namespace'},
-        'body' => decode_json($params->{'body'}),
-        'pretty' => $params->{'pretty'},
+        'body' => $params->{'body'},
     );
     my $response = $ECOpenShiftContainerPlatform3RESTClient->PatchADeploymentInANamespace(%restParams);
     logInfo("Got response from the server: ", $response);
@@ -121,7 +119,6 @@ sub patchADeploymentConfigInANamespace {
 # Parameter: name
 # Parameter: namespace
 # Parameter: body
-# Parameter: pretty
 
 sub patchARouteInANamespace {
     my ($pluginObject) = @_;
@@ -134,8 +131,7 @@ sub patchARouteInANamespace {
     my %restParams = (
         'name' => $params->{'name'},
         'namespace' => $params->{'namespace'},
-        'body' => decode_json($params->{'body'}),
-        'pretty' => $params->{'pretty'},
+        'body' => $params->{'body'},
     );
     my $response = $ECOpenShiftContainerPlatform3RESTClient->PatchARouteInANamespace(%restParams);
     logInfo("Got response from the server: ", $response);
