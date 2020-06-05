@@ -1,0 +1,209 @@
+pluginInfo:
+  # This is default sample specification
+  # Feel free to change it
+  # Call flowpdk showdoc pluginspec to see the list of available fields and their description
+  pluginName: 'EC-OpenShiftContainerPlatform3'
+  version: '0.9.0'
+  description: 'Integrate with Redhat Openshift Container Platform 3 with rest api'
+  author: 'Shaohua Wen'
+  supportUrl: 'none'
+  category: 'Utilities'
+  shell: 'ec-perl'
+
+# REST-backed plugin configuration
+configuration:
+  checkConnection: true
+  restConfigInfo:
+    endpointLabel: 'My REST Endpoint, e.g. https://openshift.redhat.com:8443'
+    checkConnectionUri: '/oapi/v1'
+    headers:
+      Accept: 'application/json'
+    authSchemes:
+      bearer:
+        passwordLabel: 'Bearer token'
+        description: 'Token to connect to...'
+  hasProxySupport: true
+  hasDebugLevel: true
+
+procedures:
+-
+  name: 'Get a Route in a namespace'
+  description: 'Read the specified Route'
+  hasConfig: true
+  shell: 'ec-perl'
+  parameters:
+  -
+    name: name
+    documentation: name of the Route
+    required: true
+    type: entry
+    label: Name
+    restParamInfo:
+      in: path
+  -
+    name: namespace
+    documentation: object name and auth scope, such as for teams and projects
+    required: true
+    type: entry
+    label: Name Space
+    restParamInfo:
+      in: path
+  outputParameters:
+  -
+    name: restResult 
+    description: Rest API Result
+  # Connects REST endpoint to the plugin procedure
+  restProcedureInfo:
+    url: '/apis/route.openshift.io/v1/namespaces/{{namespace}}/routes/{{name}}'
+    methodName: 'getARouteInANamespace'
+    httpMethod: 'GET'
+
+-
+  name: 'Patch a Deployment in a namespace'
+  description: 'Partially update the specified Deployment'
+  hasConfig: true
+  shell: 'ec-perl'
+  parameters:
+  -
+    name: name
+    documentation: name of the Deployment
+    required: true
+    type: entry
+    label: Name
+    restParamInfo:
+      in: path
+  -
+    name: namespace
+    documentation: object name and auth scope, such as for teams and projects
+    required: true
+    type: entry
+    label: Name Space
+    restParamInfo:
+      in: path
+  -
+    name: body
+    documentation: v1.Patch schema content
+    required: true
+    type: textarea
+    label: Body
+    restParamInfo:
+      in: body
+  -
+    name: pretty
+    documentation: If 'true', then the output is pretty printed.
+    type: checkbox
+    label: Pretty
+    initiallyChecked: true
+    checkedValue: true
+    uncheckedValue: false
+    restParamInfo:
+      in: query
+  outputParameters:
+  -
+    name: restResult 
+    description: Rest API Result
+  # Connects REST endpoint to the plugin procedure
+  restProcedureInfo:
+    url: '/apis/apps/v1beta1/namespaces/{{namespace}}/deployments/{{name}}'
+    methodName: 'PatchADeploymentInANamespace'
+    httpMethod: 'PATCH'
+
+-
+  name: 'Patch a DeploymentConfig in a namespace'
+  description: 'Partially update the specified DeploymentConfig'
+  hasConfig: true
+  shell: 'ec-perl'
+  parameters:
+  -
+    name: name
+    documentation: name of the DeploymentConfig
+    required: true
+    type: entry
+    label: Name
+    restParamInfo:
+      in: path
+  -
+    name: namespace
+    documentation: object name and auth scope, such as for teams and projects
+    required: true
+    type: entry
+    label: Name Space
+    restParamInfo:
+      in: path
+  -
+    name: body
+    documentation: v1.Patch schema content
+    required: true
+    type: textarea
+    label: Body
+    restParamInfo:
+      in: body
+  -
+    name: pretty
+    documentation: If 'true', then the output is pretty printed.
+    type: checkbox
+    label: Pretty
+    initiallyChecked: true
+    checkedValue: true
+    uncheckedValue: false
+    restParamInfo:
+      in: query
+  outputParameters:
+  -
+    name: restResult 
+    description: Rest API Result
+  # Connects REST endpoint to the plugin procedure
+  restProcedureInfo:
+    url: '/apis/apps.openshift.io/v1/namespaces/{{namespace}}/deploymentconfigs/{{name}}'
+    methodName: 'PatchADeploymentConfigInANamespace'
+    httpMethod: 'PATCH'
+
+-
+  name: 'Patch a Route in a namespace'
+  description: 'Partially update the specified Route'
+  hasConfig: true
+  shell: 'ec-perl'
+  parameters:
+  -
+    name: name
+    documentation: name of the Route
+    required: true
+    type: entry
+    label: Name
+    restParamInfo:
+      in: path
+  -
+    name: namespace
+    documentation: object name and auth scope, such as for teams and projects
+    required: true
+    type: entry
+    label: Name Space
+    restParamInfo:
+      in: path
+  -
+    name: body
+    documentation: v1.Patch schema content
+    required: true
+    type: textarea
+    label: Body
+    restParamInfo:
+      in: body
+  -
+    name: pretty
+    documentation: If 'true', then the output is pretty printed.
+    type: checkbox
+    label: Pretty
+    initiallyChecked: true
+    checkedValue: true
+    uncheckedValue: false
+    restParamInfo:
+      in: query
+  outputParameters:
+  -
+    name: restResult 
+    description: Rest API Result
+  # Connects REST endpoint to the plugin procedure
+  restProcedureInfo:
+    url: '/apis/route.openshift.io/v1/namespaces/{{namespace}}/routes/{{name}}'
+    methodName: 'PatchARouteInANamespace'
+    httpMethod: 'PATCH'
