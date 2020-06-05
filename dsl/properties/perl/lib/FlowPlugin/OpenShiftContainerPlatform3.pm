@@ -75,7 +75,7 @@ sub patchADeploymentInANamespace {
         'namespace' => $params->{'namespace'},
         'body' => $params->{'body'},
     );
-    my $response = $ECOpenShiftContainerPlatform3RESTClient->getARouteInANamespace(%restParams);
+    my $response = $ECOpenShiftContainerPlatform3RESTClient->patchDeploymentInANamespace(%restParams);
     logInfo("Got response from the server: ", $response);
 
     my $stepResult = $context->newStepResult;
@@ -104,7 +104,7 @@ sub patchADeploymentConfigInANamespace {
         'namespace' => $params->{'namespace'},
         'body' => $params->{'body'},
     );
-    my $response = $ECOpenShiftContainerPlatform3RESTClient->PatchADeploymentInANamespace(%restParams);
+    my $response = $ECOpenShiftContainerPlatform3RESTClient->patchADeploymentConfigInANamespace(%restParams);
     logInfo("Got response from the server: ", $response);
 
     my $stepResult = $context->newStepResult;
@@ -133,7 +133,7 @@ sub patchARouteInANamespace {
         'namespace' => $params->{'namespace'},
         'body' => $params->{'body'},
     );
-    my $response = $ECOpenShiftContainerPlatform3RESTClient->PatchARouteInANamespace(%restParams);
+    my $response = $ECOpenShiftContainerPlatform3RESTClient->patchARouteInANamespace(%restParams);
     logInfo("Got response from the server: ", $response);
 
     my $stepResult = $context->newStepResult;
