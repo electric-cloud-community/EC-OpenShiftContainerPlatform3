@@ -34,13 +34,4 @@
     <documentation>v1.Patch schema content</documentation>
     <label>Body:</label>
   </formElement>
-  <formElement>
-    <type>checkbox</type>
-    <property>pretty</property>
-    <documentation>If 'true', then the output is pretty printed.</documentation>
-    <label>Pretty:</label>
-    <checkedValue>true</checkedValue>
-    <initiallyChecked>true</initiallyChecked>
-    <uncheckedValue>false</uncheckedValue>
-  </formElement>
 </editor>

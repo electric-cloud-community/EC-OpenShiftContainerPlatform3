@@ -88,8 +88,6 @@ procedures:
     label: Body
     restParamInfo:
       in: body
-    restParamInfo:
-      in: query
   outputParameters:
   -
     name: restResult 
@@ -130,8 +128,6 @@ procedures:
     label: Body
     restParamInfo:
       in: body
-    restParamInfo:
-      in: query
   outputParameters:
   -
     name: restResult 

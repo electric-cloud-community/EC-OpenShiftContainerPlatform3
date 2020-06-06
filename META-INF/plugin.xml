@@ -3,7 +3,7 @@
   <key>EC-OpenShiftContainerPlatform3</key>
   <label>EC-OpenShiftContainerPlatform3</label>
   <author>Shaohua Wen</author>
-  <category>Utilities</category>
+  <category>Container Management</category>
   <description>Integrate with Redhat Openshift Container Platform 3 with rest api</description>
   <configure>ec_config</configure>
   <version>0.9.1</version>
