@@ -50,12 +50,76 @@ procedures:
       in: path
   outputParameters:
   -
-    name: restResult 
+    name: restResult
     description: Rest API Result
   # Connects REST endpoint to the plugin procedure
   restProcedureInfo:
     url: '/apis/route.openshift.io/v1/namespaces/{{namespace}}/routes/{{name}}'
     methodName: 'getARouteInANamespace'
+    httpMethod: 'GET'
+
+-
+  name: 'Get a Deployment in a namespace'
+  description: 'Read the specified Deployment'
+  hasConfig: true
+  shell: 'ec-perl'
+  parameters:
+  -
+    name: name
+    documentation: name of the Deployment
+    required: true
+    type: entry
+    label: Name
+    restParamInfo:
+      in: path
+  -
+    name: namespace
+    documentation: object name and auth scope, such as for teams and projects
+    required: true
+    type: entry
+    label: Name Space
+    restParamInfo:
+      in: path
+  outputParameters:
+  -
+    name: restResult
+    description: Rest API Result
+  # Connects REST endpoint to the plugin procedure
+  restProcedureInfo:
+    url: '/apis/apps/v1beta1/namespaces/{{namespace}}/deployments/{{name}}'
+    methodName: 'getADeploymentInANamespace'
+    httpMethod: 'GET'
+
+-
+  name: 'Get a DeploymentConfig in a namespace'
+  description: 'Read the specified DeploymentConfig'
+  hasConfig: true
+  shell: 'ec-perl'
+  parameters:
+  -
+    name: name
+    documentation: name of the DeploymentConfig
+    required: true
+    type: entry
+    label: Name
+    restParamInfo:
+      in: path
+  -
+    name: namespace
+    documentation: object name and auth scope, such as for teams and projects
+    required: true
+    type: entry
+    label: Name Space
+    restParamInfo:
+      in: path
+  outputParameters:
+  -
+    name: restResult
+    description: Rest API Result
+  # Connects REST endpoint to the plugin procedure
+  restProcedureInfo:
+    url: '/apis/apps.openshift.io/v1/namespaces/{{namespace}}/deploymentconfigs/{{name}}'
+    methodName: 'getADeploymentConfigInANamespace'
     httpMethod: 'GET'
 
 -
