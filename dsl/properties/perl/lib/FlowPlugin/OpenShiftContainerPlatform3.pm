@@ -75,7 +75,7 @@ sub patchADeploymentInANamespace {
         'namespace' => $params->{'namespace'},
         'body' => $params->{'body'},
     );
-    my $response = $ECOpenShiftContainerPlatform3RESTClient->PatchDeploymentInANamespace(%restParams);
+    my $response = $ECOpenShiftContainerPlatform3RESTClient->PatchADeploymentInANamespace(%restParams);
     logInfo("Got response from the server: ", $response);
 
     my $stepResult = $context->newStepResult;
