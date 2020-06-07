@@ -123,6 +123,54 @@ procedures:
     httpMethod: 'GET'
 
 -
+  name: 'Create a Route in a namespace'
+  description: 'Create the specified Route'
+  hasConfig: true
+  shell: 'ec-perl'
+  parameters:
+  -
+    name: namespace
+    documentation: object name and auth scope, such as for teams and projects
+    required: true
+    type: entry
+    label: Name Space
+    restParamInfo:
+      in: path
+  outputParameters:
+  -
+    name: restResult
+    description: Rest API Result
+  # Connects REST endpoint to the plugin procedure
+  restProcedureInfo:
+    url: '/apis/route.openshift.io/v1/namespaces/{{namespace}}/routes'
+    methodName: 'createARouteInANamespace'
+    httpMethod: 'POST'
+
+-
+  name: 'Create a DeploymentConfig in a namespace'
+  description: 'Create the specified DeploymentConfig'
+  hasConfig: true
+  shell: 'ec-perl'
+  parameters:
+  -
+    name: namespace
+    documentation: object name and auth scope, such as for teams and projects
+    required: true
+    type: entry
+    label: Name Space
+    restParamInfo:
+      in: path
+  outputParameters:
+  -
+    name: restResult
+    description: Rest API Result
+  # Connects REST endpoint to the plugin procedure
+  restProcedureInfo:
+    url: '/apis/apps.openshift.io/v1/namespaces/{{namespace}}/deploymentconfigs'
+    methodName: 'createADeploymentConfigInANamespace'
+    httpMethod: 'POST'
+
+-
   name: 'Patch a Deployment in a namespace'
   description: 'Partially update the specified Deployment'
   hasConfig: true
@@ -156,7 +204,7 @@ procedures:
       in: query
   outputParameters:
   -
-    name: restResult 
+    name: restResult
     description: Rest API Result
   # Connects REST endpoint to the plugin procedure
   restProcedureInfo:
@@ -198,7 +246,7 @@ procedures:
       in: query
   outputParameters:
   -
-    name: restResult 
+    name: restResult
     description: Rest API Result
   # Connects REST endpoint to the plugin procedure
   restProcedureInfo:
@@ -238,7 +286,7 @@ procedures:
       in: body
   outputParameters:
   -
-    name: restResult 
+    name: restResult
     description: Rest API Result
   # Connects REST endpoint to the plugin procedure
   restProcedureInfo:
