@@ -26,37 +26,38 @@ Currently contains the following procedures:
 
 #### Create Route ####
 
-{
-  "kind": "Route",
-  "apiVersion": "route.openshift.io/v1",
-  "metadata": {
-    "name": "bluegreen",
-    "namespace": "default"
-  },
-  "spec": {
-    "host": "kubernetes-default.apps.ocp.kearos.net",
-    "path": "/bluegreen",
-    "to": {
-      "kind": "Service",
-      "name": "bluegreen",
-      "weight": 100
-    },
-    "port": {
-      "targetPort": 443
-    },
-    "wildcardPolicy": "None"
-  }
-}
+    {
+      "kind": "Route",
+      "apiVersion": "route.openshift.io/v1",
+      "metadata": {
+        "name": "bluegreen",
+        "namespace": "default"
+      },
+      "spec": {
+        "host": "kubernetes-default.apps.ocp.kearos.net",
+        "path": "/bluegreen",
+        "to": {
+          "kind": "Service",
+          "name": "bluegreen",
+          "weight": 100
+        },
+        "port": {
+          "targetPort": 443
+        },
+        "wildcardPolicy": "None"
+      }
+    }
 
 #### Patch Route ####
 
-[
-    {
-        "op": "replace",
-        "path": "/spec/to/name",
-        "value": "/green"
-    }
-]
+    [
+        {
+            "op": "replace",
+            "path": "/spec/to/name",
+            "value": "/green"
+        }
+    ]
+'''
 
 ### Contributors ###
 - Shaohua (Holy) Wen
