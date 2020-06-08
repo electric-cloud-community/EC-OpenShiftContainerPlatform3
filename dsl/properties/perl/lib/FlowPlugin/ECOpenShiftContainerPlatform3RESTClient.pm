@@ -771,9 +771,11 @@ Use this method to change HTTP::Request object before the request, e.g.
     $r->header('Authorization', $myCustomAuthHeader);
 
 If you are using custom authorization, it can be placed in here. Call $self->method to find out the wrapper
+
 method name.
 
     $r HTTP::Request object to augment
+
     $params Original parameters passed to the wrapper method.
 
 The returned HTTP::Request object will be sent to the API server.
@@ -781,31 +783,82 @@ The returned HTTP::Request object will be sent to the API server.
 Examples:
 
     if ($self->method eq 'uploadFile') {
+
         return $self->_handleUploadLogic($params);
+
     }
 
     my $method = $self->method;
+
     my $augmentMethod = $method . 'Augment';
+
     if ($self->can($augmentMethod)) {
+
         return $self->$augmentMethod($r, $params);
+
     }
 
 =cut
 
 sub augmentRequest {
+
     my ($self, $r, $params) = @_;
     # empty, for user to fill
+
+    my $method = $self->method;
+
+    my $augmentMethod = $method . 'Augment';
+
+    if ($self->can($augmentMethod)) {
+
+        return $self->$augmentMethod($r, $params);
+
+    }
+
     return $r;
+
+}
+
+sub PatchADeploymentInANamespaceAugment {
+
+    my ($self, $r, $params) = @_;
+
+    $r->header('Content-Type' => "application/json-patch+json");
+
+    return $r;
+
+}
+
+sub PatchADeploymentConfigInANamespaceAugment {
+
+    my ($self, $r, $params) = @_;
+
+    $r->header('Content-Type' => "application/json-patch+json");
+
+    return $r;
+
+}
+
+sub PatchARouteInANamespaceAugment {
+
+    my ($self, $r, $params) = @_;
+
+    $r->header('Content-Type' => "application/json-patch+json");
+
+    return $r;
+
 }
 
 =pod
 
 Use this method to override default payload encoding.
+
 By default the payload is encoded as JSON.
 
 =cut
 
 sub encodePayload {
+
     my ($self, $payload) = @_;
 
     # Return raw JSON
@@ -826,34 +879,51 @@ If this method returns a value, this value will be returned from the caller meth
 Examples:
 
     unless ($response->is_success) {
+
         my $json = decode_json($response->content);
+
         my $errorMessage = $json->{errorMessage};
+
         die "Response failed: $errorMessage";
+
     }
 
     unless($response->is_success) {
+
         if ($self->{retries} < $retries) {
+
             $self->{retries} ++;
+
             my $p = $self->methodParameters;
+
             my $method = $self->method;
+
             return $self->$method($p);
+
         }
+
         else {
+
             die "Response failed and retries count has been exceeded";
+
         }
+
     }
 
 =cut
 
 sub processResponse {
+
     my ($self, $response) = @_;
 
     return undef;
+
 }
 
 =pod
 
 Use this method to override default response decoding logic.
+
 By default the response is decoded as JSON.
 
 $response HTTP::Response object.
@@ -863,11 +933,15 @@ The method should return deserialized response.
 =cut
 
 sub parseResponse {
+
     my ($self, $response) = @_;
 
     if ($response->content) {
+
         return decode_json($response->content);
+
     }
+
 }
 
 1;
