@@ -3,10 +3,10 @@
   <key>EC-OpenShiftContainerPlatform3</key>
   <label>EC-OpenShiftContainerPlatform3</label>
   <author>Shaohua Wen</author>
-  <category>Utilities</category>
+  <category>Container Management</category>
   <description>Integrate with Redhat Openshift Container Platform 3 with rest api</description>
   <configure>ec_config</configure>
-  <version>0.9.1</version>
+  <version>0.9.2</version>
   <authorUrl>none</authorUrl>
   <help>help.xml</help>
   <depends min='1.4.1'>EC-PluginManager</depends>

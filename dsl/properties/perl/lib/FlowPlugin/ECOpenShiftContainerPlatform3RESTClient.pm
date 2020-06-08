@@ -387,8 +387,236 @@ sub getARouteInANamespace {
     my $headers = {
     };
 
+    $headers->{'Content-Type'} = 'application/json';
+
     # Creating a request object
     my $response = $self->makeRequest('GET', $uri, $query, $payload, $headers, \%params);
+    return $response;
+}
+
+# Generated code for the endpoint
+
+# Do not change this code
+
+# name: in path
+
+# namespace: in path
+
+sub getADeploymentInANamespace {
+    my ($self, %params) = @_;
+
+    $self->{method} = 'getADeploymentInANamespace';
+    $self->{methodParameters} = \%params;
+
+    my $uri = "/apis/apps/v1beta1/namespaces/{{namespace}}/deployments/{{name}}";
+    logDebug "URI Template: $uri";
+    $uri = renderOneLineTemplate($uri, %params);
+    logDebug "Rendered URI: $uri";
+
+    my $query = {
+
+    };
+
+    logDebug "Query", $query;
+
+    # TODO handle credentials
+    # TODO Handle empty parameters
+    my $payload = {
+
+    };
+    logDebug($payload);
+
+    $payload = $self->cleanEmptyFields($payload);
+
+    my $headers = {
+    };
+
+    $headers->{'Content-Type'} = 'application/json';
+
+    # Creating a request object
+    my $response = $self->makeRequest('GET', $uri, $query, $payload, $headers, \%params);
+    return $response;
+}
+
+# Generated code for the endpoint
+
+# Do not change this code
+
+# name: in path
+
+# namespace: in path
+
+sub getADeploymentConfigInANamespace {
+    my ($self, %params) = @_;
+
+    $self->{method} = 'getADeploymentConfigInANamespace';
+    $self->{methodParameters} = \%params;
+
+    my $uri = "/apis/apps.openshift.io/v1/namespaces/{{namespace}}/deploymentconfigs/{{name}}";
+    logDebug "URI Template: $uri";
+    $uri = renderOneLineTemplate($uri, %params);
+    logDebug "Rendered URI: $uri";
+
+    my $query = {
+
+    };
+
+    logDebug "Query", $query;
+
+    # TODO handle credentials
+    # TODO Handle empty parameters
+    my $payload = {
+
+    };
+    logDebug($payload);
+
+    $payload = $self->cleanEmptyFields($payload);
+
+    my $headers = {
+    };
+
+    $headers->{'Content-Type'} = 'application/json';
+
+    # Creating a request object
+    my $response = $self->makeRequest('GET', $uri, $query, $payload, $headers, \%params);
+    return $response;
+}
+
+# Generated code for the endpoint
+
+# Do not change this code
+
+# namespace: in path
+
+# body: in body
+
+sub createARouteInANamespace {
+    my ($self, %params) = @_;
+
+    $self->{method} = 'createARouteInANamespace';
+    $self->{methodParameters} = \%params;
+
+    my $uri = "/apis/route.openshift.io/v1/namespaces/{{namespace}}/routes";
+    logDebug "URI Template: $uri";
+    $uri = renderOneLineTemplate($uri, %params);
+    logDebug "Rendered URI: $uri";
+
+    my $query = {
+
+    };
+
+    logDebug "Query", $query;
+
+    # TODO handle credentials
+    # TODO Handle empty parameters
+    my $payload = {
+
+        'body' => $params{ 'body' },
+
+    };
+    logDebug($payload);
+
+    $payload = $self->cleanEmptyFields($payload);
+
+    my $headers = {
+    };
+
+    $headers->{'Content-Type'} = 'application/json';
+
+    # Creating a request object
+    my $response = $self->makeRequest('POST', $uri, $query, $payload, $headers, \%params);
+    return $response;
+}
+
+# Generated code for the endpoint
+
+# Do not change this code
+
+# namespace: in path
+
+# body: in body
+
+sub createADeploymentInANamespace {
+    my ($self, %params) = @_;
+
+    $self->{method} = 'createADeploymentInANamespace';
+    $self->{methodParameters} = \%params;
+
+    my $uri = "/apis/apps/v1beta1/namespaces/{{namespace}}/deployments";
+    logDebug "URI Template: $uri";
+    $uri = renderOneLineTemplate($uri, %params);
+    logDebug "Rendered URI: $uri";
+
+    my $query = {
+
+    };
+
+    logDebug "Query", $query;
+
+    # TODO handle credentials
+    # TODO Handle empty parameters
+    my $payload = {
+
+        'body' => $params{ 'body' },
+
+    };
+    logDebug($payload);
+
+    $payload = $self->cleanEmptyFields($payload);
+
+    my $headers = {
+    };
+
+    $headers->{'Content-Type'} = 'application/json';
+
+    # Creating a request object
+    my $response = $self->makeRequest('POST', $uri, $query, $payload, $headers, \%params);
+    return $response;
+}
+
+# Generated code for the endpoint
+
+# Do not change this code
+
+# namespace: in path
+
+# body: in body
+
+sub createADeploymentConfigInANamespace {
+    my ($self, %params) = @_;
+
+    $self->{method} = 'createADeploymentConfigInANamespace';
+    $self->{methodParameters} = \%params;
+
+    my $uri = "/apis/apps.openshift.io/v1/namespaces/{{namespace}}/deploymentconfigs";
+    logDebug "URI Template: $uri";
+    $uri = renderOneLineTemplate($uri, %params);
+    logDebug "Rendered URI: $uri";
+
+    my $query = {
+
+    };
+
+    logDebug "Query", $query;
+
+    # TODO handle credentials
+    # TODO Handle empty parameters
+    my $payload = {
+
+        'body' => $params{ 'body' },
+
+    };
+    logDebug($payload);
+
+    $payload = $self->cleanEmptyFields($payload);
+
+    my $headers = {
+    };
+
+    $headers->{'Content-Type'} = 'application/json';
+
+    # Creating a request object
+    my $response = $self->makeRequest('POST', $uri, $query, $payload, $headers, \%params);
     return $response;
 }
 
@@ -432,6 +660,8 @@ sub PatchADeploymentInANamespace {
 
     my $headers = {
     };
+
+    $headers->{'Content-Type'} = 'application/json-patch+json';
 
     # Creating a request object
     my $response = $self->makeRequest('PATCH', $uri, $query, $payload, $headers, \%params);
@@ -479,6 +709,8 @@ sub PatchADeploymentConfigInANamespace {
     my $headers = {
     };
 
+    $headers->{'Content-Type'} = 'application/json-patch+json';
+
     # Creating a request object
     my $response = $self->makeRequest('PATCH', $uri, $query, $payload, $headers, \%params);
     return $response;
@@ -525,11 +757,13 @@ sub PatchARouteInANamespace {
     my $headers = {
     };
 
+    $headers->{'Content-Type'} = 'application/json-patch+json';
+
     # Creating a request object
     my $response = $self->makeRequest('PATCH', $uri, $query, $payload, $headers, \%params);
     return $response;
 }
-## DO NOT EDIT THIS BLOCK === rest client ends, checksum: 48fad539d88d1125ed9fa8cebbc6f05d ===
+## DO NOT EDIT THIS BLOCK === rest client ends, checksum: b9f80c9ddfdf78223a2dfde6dc9951ea ===
 =pod
 
 Use this method to change HTTP::Request object before the request, e.g.
@@ -560,29 +794,7 @@ Examples:
 
 sub augmentRequest {
     my ($self, $r, $params) = @_;
-    my $method = $self->method;
-    my $augmentMethod = $method . 'Augment';
-    if ($self->can($augmentMethod)) {
-        return $self->$augmentMethod($r, $params);
-    }
-    return $r;
-}
-
-sub PatchADeploymentInANamespaceAugment {
-    my ($self, $r, $params) = @_;
-    $r->header('Content-Type' => "application/json-patch+json");
-    return $r;
-}
-
-sub PatchADeploymentConfigInANamespaceAugment {
-    my ($self, $r, $params) = @_;
-    $r->header('Content-Type' => "application/json-patch+json");
-    return $r;
-}
-
-sub PatchARouteInANamespaceAugment {
-    my ($self, $r, $params) = @_;
-    $r->header('Content-Type' => "application/json-patch+json");
+    # empty, for user to fill
     return $r;
 }
 
@@ -596,13 +808,11 @@ By default the payload is encoded as JSON.
 sub encodePayload {
     my ($self, $payload) = @_;
 
-    if ($self->method eq 'PatchARouteInANamespace' or 'PatchADeploymentInANamespace' or 'PatchADeploymentConfigInANamespace') {
-        # JSON
-        my $body = $payload->{body};
-        return $body;
-    }
+    # Return raw JSON
+    my $body = $payload->{body};
+    return $body;
 
-    return encode_json($payload);
+    # return encode_json($payload);
 }
 
 =pod

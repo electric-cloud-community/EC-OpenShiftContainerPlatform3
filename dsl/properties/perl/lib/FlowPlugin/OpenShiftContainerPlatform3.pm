@@ -55,6 +55,141 @@ sub getECOpenShiftContainerPlatform3RESTClient {
     my $client = FlowPlugin::ECOpenShiftContainerPlatform3RESTClient->createFromConfig($config);
     return $client;
 }
+# Auto-generated method for the procedure Get a Deployment in a namespace/Get a Deployment in a namespace
+# Add your code into this method and it will be called when step runs
+# Parameter: config
+# Parameter: name
+# Parameter: namespace
+
+sub getADeploymentInANamespace {
+    my ($pluginObject) = @_;
+
+    my $context = $pluginObject->getContext();
+    my $params = $context->getRuntimeParameters();
+
+    my $ECOpenShiftContainerPlatform3RESTClient = $pluginObject->getECOpenShiftContainerPlatform3RESTClient;
+    # If you have changed your parameters in the procedure declaration, add/remove them here
+    my %restParams = (
+        'name' => $params->{'name'},
+        'namespace' => $params->{'namespace'},
+    );
+    my $response = $ECOpenShiftContainerPlatform3RESTClient->getADeploymentInANamespace(%restParams);
+    logInfo("Got response from the server: ", $response);
+
+    my $stepResult = $context->newStepResult;
+    
+    $stepResult->setOutputParameter('restResult', encode_json($response));
+    $stepResult->apply();
+}
+
+# Auto-generated method for the procedure Get a DeploymentConfig in a namespace/Get a DeploymentConfig in a namespace
+# Add your code into this method and it will be called when step runs
+# Parameter: config
+# Parameter: name
+# Parameter: namespace
+
+sub getADeploymentConfigInANamespace {
+    my ($pluginObject) = @_;
+
+    my $context = $pluginObject->getContext();
+    my $params = $context->getRuntimeParameters();
+
+    my $ECOpenShiftContainerPlatform3RESTClient = $pluginObject->getECOpenShiftContainerPlatform3RESTClient;
+    # If you have changed your parameters in the procedure declaration, add/remove them here
+    my %restParams = (
+        'name' => $params->{'name'},
+        'namespace' => $params->{'namespace'},
+    );
+    my $response = $ECOpenShiftContainerPlatform3RESTClient->getADeploymentConfigInANamespace(%restParams);
+    logInfo("Got response from the server: ", $response);
+
+    my $stepResult = $context->newStepResult;
+    
+    $stepResult->setOutputParameter('restResult', encode_json($response));
+    $stepResult->apply();
+}
+
+# Auto-generated method for the procedure Create a Route in a namespace/Create a Route in a namespace
+# Add your code into this method and it will be called when step runs
+# Parameter: config
+# Parameter: namespace
+# Parameter: body
+
+sub createARouteInANamespace {
+    my ($pluginObject) = @_;
+
+    my $context = $pluginObject->getContext();
+    my $params = $context->getRuntimeParameters();
+
+    my $ECOpenShiftContainerPlatform3RESTClient = $pluginObject->getECOpenShiftContainerPlatform3RESTClient;
+    # If you have changed your parameters in the procedure declaration, add/remove them here
+    my %restParams = (
+        'namespace' => $params->{'namespace'},
+        'body' => $params->{'body'},
+    );
+    my $response = $ECOpenShiftContainerPlatform3RESTClient->createARouteInANamespace(%restParams);
+    logInfo("Got response from the server: ", $response);
+
+    my $stepResult = $context->newStepResult;
+    
+    $stepResult->setOutputParameter('restResult', encode_json($response));
+    $stepResult->apply();
+}
+
+# Auto-generated method for the procedure Create a Deployment in a namespace/Create a Deployment in a namespace
+# Add your code into this method and it will be called when step runs
+# Parameter: config
+# Parameter: namespace
+# Parameter: body
+
+sub createADeploymentInANamespace {
+    my ($pluginObject) = @_;
+
+    my $context = $pluginObject->getContext();
+    my $params = $context->getRuntimeParameters();
+
+    my $ECOpenShiftContainerPlatform3RESTClient = $pluginObject->getECOpenShiftContainerPlatform3RESTClient;
+    # If you have changed your parameters in the procedure declaration, add/remove them here
+    my %restParams = (
+        'namespace' => $params->{'namespace'},
+        'body' => $params->{'body'},
+    );
+    my $response = $ECOpenShiftContainerPlatform3RESTClient->createADeploymentInANamespace(%restParams);
+    logInfo("Got response from the server: ", $response);
+
+    my $stepResult = $context->newStepResult;
+    
+    $stepResult->setOutputParameter('restResult', encode_json($response));
+    $stepResult->apply();
+}
+
+# Auto-generated method for the procedure Create a DeploymentConfig in a namespace/Create a DeploymentConfig in a namespace
+# Add your code into this method and it will be called when step runs
+# Parameter: config
+# Parameter: namespace
+# Parameter: body
+
+sub createADeploymentConfigInANamespace {
+    my ($pluginObject) = @_;
+
+    my $context = $pluginObject->getContext();
+    my $params = $context->getRuntimeParameters();
+
+    my $ECOpenShiftContainerPlatform3RESTClient = $pluginObject->getECOpenShiftContainerPlatform3RESTClient;
+    # If you have changed your parameters in the procedure declaration, add/remove them here
+    my %restParams = (
+        'namespace' => $params->{'namespace'},
+        'body' => $params->{'body'},
+    );
+    my $response = $ECOpenShiftContainerPlatform3RESTClient->createADeploymentConfigInANamespace(%restParams);
+    logInfo("Got response from the server: ", $response);
+
+    my $stepResult = $context->newStepResult;
+    
+    $stepResult->setOutputParameter('restResult', encode_json($response));
+    $stepResult->apply();
+}
+
 # Auto-generated method for the procedure Patch a Deployment in a namespace/Patch a Deployment in a namespace
 # Add your code into this method and it will be called when step runs
 # Parameter: config
@@ -75,11 +210,11 @@ sub patchADeploymentInANamespace {
         'namespace' => $params->{'namespace'},
         'body' => $params->{'body'},
     );
-    my $response = $ECOpenShiftContainerPlatform3RESTClient->PatchDeploymentInANamespace(%restParams);
+    my $response = $ECOpenShiftContainerPlatform3RESTClient->PatchADeploymentInANamespace(%restParams);
     logInfo("Got response from the server: ", $response);
 
     my $stepResult = $context->newStepResult;
-
+    
     $stepResult->setOutputParameter('restResult', encode_json($response));
     $stepResult->apply();
 }
@@ -108,8 +243,8 @@ sub patchADeploymentConfigInANamespace {
     logInfo("Got response from the server: ", $response);
 
     my $stepResult = $context->newStepResult;
+    
     $stepResult->setOutputParameter('restResult', encode_json($response));
-
     $stepResult->apply();
 }
 
@@ -137,6 +272,7 @@ sub patchARouteInANamespace {
     logInfo("Got response from the server: ", $response);
 
     my $stepResult = $context->newStepResult;
+    
     $stepResult->setOutputParameter('restResult', encode_json($response));
     $stepResult->apply();
 }
