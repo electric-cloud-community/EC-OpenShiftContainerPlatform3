@@ -17,6 +17,11 @@ def pluginDir = getProperty("/projects/$pluginName/pluginDir").value
 //List of procedure steps to which the plugin configuration credentials need to be attached
 def stepsWithAttachedCredentials = [
     [procedureName: "Get a Route in a namespace", stepName: "Get a Route in a namespace"],
+    [procedureName: "Get a Deployment in a namespace", stepName: "Get a Deployment in a namespace"],
+    [procedureName: "Get a DeploymentConfig in a namespace", stepName: "Get a DeploymentConfig in a namespace"],
+    [procedureName: "Create a Route in a namespace", stepName: "Create a Route in a namespace"],
+    [procedureName: "Create a Deployment in a namespace", stepName: "Create a Deployment in a namespace"],
+    [procedureName: "Create a DeploymentConfig in a namespace", stepName: "Create a DeploymentConfig in a namespace"],
     [procedureName: "Patch a Deployment in a namespace", stepName: "Patch a Deployment in a namespace"],
     [procedureName: "Patch a DeploymentConfig in a namespace", stepName: "Patch a DeploymentConfig in a namespace"],
     [procedureName: "Patch a Route in a namespace", stepName: "Patch a Route in a namespace"],
@@ -46,7 +51,7 @@ project pluginName, {
 def retainedProperties = []
 
 upgrade(upgradeAction, pluginName, otherPluginName, stepsWithAttachedCredentials, 'ec_plugin_cfgs', retainedProperties)
-// DO NOT EDIT THIS BLOCK === promote_autogen ends, checksum: fcee834109a52bc0de0ef73672b9599f ===
+// DO NOT EDIT THIS BLOCK === promote_autogen ends, checksum: ab2aade673139c370393e84fc05f89f7 ===
 // Do not edit the code above this line
 
 project pluginName, {

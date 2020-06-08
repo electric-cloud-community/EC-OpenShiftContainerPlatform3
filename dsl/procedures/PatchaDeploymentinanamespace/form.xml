@@ -31,7 +31,7 @@
     <type>textarea</type>
     <property>body</property>
     <required>1</required>
-    <documentation>v1.Patch schema content</documentation>
-    <label>Body:</label>
+    <documentation>JSON body of the request</documentation>
+    <label>Request Body:</label>
   </formElement>
 </editor>

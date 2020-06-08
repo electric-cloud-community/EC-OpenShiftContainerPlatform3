@@ -3,7 +3,7 @@
     Please not not edit this file manually as it will be regenerated.
 -->
 <editor>
-  <help>/commander/pages/@PLUGIN_NAME@/help?s=Administration&amp;ss=Plugins#PatchaDeploymentConfiginanamespace</help>
+  <help>/commander/pages/@PLUGIN_NAME@/help?s=Administration&amp;ss=Plugins#GetaDeploymentinanamespace</help>
   <formElement>
     <type>entry</type>
     <property>config</property>
@@ -17,7 +17,7 @@
     <type>entry</type>
     <property>name</property>
     <required>1</required>
-    <documentation>name of the DeploymentConfig</documentation>
+    <documentation>name of the Deployment</documentation>
     <label>Name:</label>
   </formElement>
   <formElement>
@@ -26,12 +26,5 @@
     <required>1</required>
     <documentation>object name and auth scope, such as for teams and projects</documentation>
     <label>Name Space:</label>
-  </formElement>
-  <formElement>
-    <type>textarea</type>
-    <property>body</property>
-    <required>1</required>
-    <documentation>JSON body of the request</documentation>
-    <label>Request Body:</label>
   </formElement>
 </editor>
