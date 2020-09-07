@@ -1,10 +1,10 @@
 // This procedure.dsl was generated automatically
 // DO NOT EDIT THIS BLOCK === procedure_autogen starts ===
-procedure 'Create a Route in a namespace', description: '''Create the specified Route''', {
+procedure 'Create instantiate of a BuildRequest', description: '''Create instantiate of a BuildRequest''', {
 
-    step 'Create a Route in a namespace', {
+    step 'Create instantiate of a BuildRequest', {
         description = ''
-        command = new File(pluginDir, "dsl/procedures/CreateaRouteinanamespace/steps/CreateaRouteinanamespace.pl").text
+        command = new File(pluginDir, "dsl/procedures/CreateinstantiateofaBuildRequest/steps/CreateinstantiateofaBuildRequest.pl").text
         shell = 'ec-perl'
         shell = 'ec-perl'
 
@@ -13,7 +13,7 @@ procedure 'Create a Route in a namespace', description: '''Create the specified 
 
     formalOutputParameter 'restResult',
         description: 'Rest API Result'
-// DO NOT EDIT THIS BLOCK === procedure_autogen ends, checksum: b7d308f6764ab16c8ead9a3740c881d0 ===
+// DO NOT EDIT THIS BLOCK === procedure_autogen ends, checksum: 45c81053ff4aba43baad510b88f8eb6b ===
 // Do not update the code above the line
 // procedure properties declaration can be placed in here, like
 // property 'property name', value: "value"

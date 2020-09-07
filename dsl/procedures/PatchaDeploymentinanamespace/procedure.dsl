@@ -12,8 +12,8 @@ procedure 'Patch a Deployment in a namespace', description: '''Partially update 
     }
 
     formalOutputParameter 'restResult',
-        description: '''Rest API Result'''
-// DO NOT EDIT THIS BLOCK === procedure_autogen ends, checksum: 540a5901bd0617f6bb4bf4def7226f9c ===
+        description: 'Rest API Result'
+// DO NOT EDIT THIS BLOCK === procedure_autogen ends, checksum: bbadbd9242a02d7effa6ce8ac88af513 ===
 // Do not update the code above the line
 // procedure properties declaration can be placed in here, like
 // property 'property name', value: "value"

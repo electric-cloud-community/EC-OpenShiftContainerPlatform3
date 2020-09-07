@@ -12,8 +12,8 @@ procedure 'Get a DeploymentConfig in a namespace', description: '''Read the spec
     }
 
     formalOutputParameter 'restResult',
-        description: '''Rest API Result'''
-// DO NOT EDIT THIS BLOCK === procedure_autogen ends, checksum: fe5b8d2eaa78acf34055f16ddef95d38 ===
+        description: 'Rest API Result'
+// DO NOT EDIT THIS BLOCK === procedure_autogen ends, checksum: 222c980de6f7eb22507d9382ba5b54ae ===
 // Do not update the code above the line
 // procedure properties declaration can be placed in here, like
 // property 'property name', value: "value"

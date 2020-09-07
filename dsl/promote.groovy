@@ -25,6 +25,7 @@ def stepsWithAttachedCredentials = [
     [procedureName: "Patch a Deployment in a namespace", stepName: "Patch a Deployment in a namespace"],
     [procedureName: "Patch a DeploymentConfig in a namespace", stepName: "Patch a DeploymentConfig in a namespace"],
     [procedureName: "Patch a Route in a namespace", stepName: "Patch a Route in a namespace"],
+    [procedureName: "Create instantiate of a BuildRequest", stepName: "Create instantiate of a BuildRequest"],
 
 ]
 
@@ -51,7 +52,7 @@ project pluginName, {
 def retainedProperties = []
 
 upgrade(upgradeAction, pluginName, otherPluginName, stepsWithAttachedCredentials, 'ec_plugin_cfgs', retainedProperties)
-// DO NOT EDIT THIS BLOCK === promote_autogen ends, checksum: ab2aade673139c370393e84fc05f89f7 ===
+// DO NOT EDIT THIS BLOCK === promote_autogen ends, checksum: ffef2e5d6ce72daca5630d958f037735 ===
 // Do not edit the code above this line
 
 project pluginName, {

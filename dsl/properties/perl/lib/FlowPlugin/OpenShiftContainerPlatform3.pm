@@ -277,6 +277,35 @@ sub patchARouteInANamespace {
     $stepResult->apply();
 }
 
+# Auto-generated method for the procedure Create instantiate of a BuildRequest/Create instantiate of a BuildRequest
+# Add your code into this method and it will be called when step runs
+# Parameter: config
+# Parameter: name
+# Parameter: namespace
+# Parameter: body
+
+sub createInstantiateOfABuildRequest {
+    my ($pluginObject) = @_;
+
+    my $context = $pluginObject->getContext();
+    my $params = $context->getRuntimeParameters();
+
+    my $ECOpenShiftContainerPlatform3RESTClient = $pluginObject->getECOpenShiftContainerPlatform3RESTClient;
+    # If you have changed your parameters in the procedure declaration, add/remove them here
+    my %restParams = (
+        'name' => $params->{'name'},
+        'namespace' => $params->{'namespace'},
+        'body' => $params->{'body'},
+    );
+    my $response = $ECOpenShiftContainerPlatform3RESTClient->CreateInstantiateOfABuildRequest(%restParams);
+    logInfo("Got response from the server: ", $response);
+
+    my $stepResult = $context->newStepResult;
+    
+
+    $stepResult->apply();
+}
+
 ## === step ends ===
 # Please do not remove the marker above, it is used to place new procedures into this file.
 

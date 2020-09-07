@@ -763,7 +763,55 @@ sub PatchARouteInANamespace {
     my $response = $self->makeRequest('PATCH', $uri, $query, $payload, $headers, \%params);
     return $response;
 }
-## DO NOT EDIT THIS BLOCK === rest client ends, checksum: b9f80c9ddfdf78223a2dfde6dc9951ea ===
+
+# Generated code for the endpoint
+
+# Do not change this code
+
+# name: in path
+
+# namespace: in path
+
+# body: in body
+
+sub CreateInstantiateOfABuildRequest {
+    my ($self, %params) = @_;
+
+    $self->{method} = 'CreateInstantiateOfABuildRequest';
+    $self->{methodParameters} = \%params;
+
+    my $uri = "/apis/build.openshift.io/v1/namespaces/{{namespace}}/buildconfigs/{{name}}/instantiate";
+    logDebug "URI Template: $uri";
+    $uri = renderOneLineTemplate($uri, %params);
+    logDebug "Rendered URI: $uri";
+
+    my $query = {
+
+    };
+
+    logDebug "Query", $query;
+
+    # TODO handle credentials
+    # TODO Handle empty parameters
+    my $payload = {
+
+        'body' => $params{ 'body' },
+
+    };
+    logDebug($payload);
+
+    $payload = $self->cleanEmptyFields($payload);
+
+    my $headers = {
+    };
+
+    $headers->{'Content-Type'} = 'application/json';
+
+    # Creating a request object
+    my $response = $self->makeRequest('POST', $uri, $query, $payload, $headers, \%params);
+    return $response;
+}
+## DO NOT EDIT THIS BLOCK === rest client ends, checksum: d27c817b3df49bfe6de7d568786d1c38 ===
 =pod
 
 Use this method to change HTTP::Request object before the request, e.g.

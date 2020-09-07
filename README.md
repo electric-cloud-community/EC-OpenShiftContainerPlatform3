@@ -16,6 +16,7 @@ Currently contains the following procedures:
 - Patch Route in a Namespace
 - Patch Deployment in a Namespace
 - Patch DeploymentConfig in a Namespace
+- Create instantiate of a BuildRequest
 
 ### Notes ###
 - Check Connection when creating plugin config does not currently work
